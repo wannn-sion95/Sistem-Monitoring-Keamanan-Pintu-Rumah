@@ -1,6 +1,5 @@
 # 🛡️ Sistem Monitoring Keamanan Pintu Rumah
 
-![Sistem Keamanan Dashboard Preview](https://img.shields.io/badge/UI-Enterprise_Dark_Mode-09090b?style=for-the-badge)
 ![Golang Backend](https://img.shields.io/badge/Backend-Go_1.21+-00ADD8?style=for-the-badge&logo=go)
 ![React Frontend](https://img.shields.io/badge/Frontend-React_Vite-61DAFB?style=for-the-badge&logo=react)
 ![Protocol MQTT](https://img.shields.io/badge/Protocol-MQTT_%7C_WebSocket-8A2BE2?style=for-the-badge)
