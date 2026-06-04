@@ -1,16 +1,39 @@
-# React + Vite
+# 🛡️ SecureDoor Telemetry: IoT Security Command Center
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![SecureDoor Dashboard Preview](https://img.shields.io/badge/UI-Enterprise_Dark_Mode-09090b?style=for-the-badge)
+![Golang Backend](https://img.shields.io/badge/Backend-Go_1.21+-00ADD8?style=for-the-badge&logo=go)
+![React Frontend](https://img.shields.io/badge/Frontend-React_Vite-61DAFB?style=for-the-badge&logo=react)
+![Protocol MQTT](https://img.shields.io/badge/Protocol-MQTT_%7C_WebSocket-8A2BE2?style=for-the-badge)
 
-Currently, two official plugins are available:
+Sebuah sistem pemantauan keamanan pintu cerdas (*end-to-end*) tingkat industri yang dirancang dengan arsitektur telemetri *real-time*. Proyek ini menjembatani perangkat keras mikrokontroler dengan antarmuka web modern menggunakan perutean data berkecepatan tinggi, menjadikannya sistem yang andal untuk skenario *monitoring* waktu nyata.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Dibuat oleh **Kelompok 18**.
 
-## React Compiler
+## 🚀 Arsitektur & Teknologi Utama
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Sistem ini dirancang dengan memisahkan *layer* perangkat keras, jaringan/pemrosesan, dan antarmuka pengguna untuk memastikan skalabilitas dan latensi yang rendah.
 
-## Expanding the ESLint configuration
+*   **Edge/Hardware Layer:** Simulasi **ESP32** dilengkapi sensor **Ultrasonik (HC-SR04)** untuk pengukuran jarak presisi dan **Sensor PIR** untuk deteksi inframerah.
+*   **Digital Signal Processing (DSP):** Implementasi algoritma **Moving Average Filter** pada mikrokontroler untuk menghaluskan sinyal diskrit dari sensor ultrasonik, mencegah lonjakan data ( *noise* ), dan menghasilkan kalkulasi jarak yang stabil.
+*   **Backend Routing (Go):** Server tangguh berbasis **Golang** yang bertindak sebagai *broker bridge*. Mengelola *payload* telemetri dari protokol **MQTT** dan meneruskannya secara mulus ke antarmuka klien melalui **WebSocket**.
+*   **Frontend Command Center (React):** Dasbor berstandar industri dengan pendekatan *Enterprise Dark Mode*. Dirancang untuk meminimalisir *cognitive overload* layaknya layar navigasi profesional, lengkap dengan *Activity Logging* otomatis.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## ⚙️ Logika Deteksi (*Double Validation*)
+
+Untuk mencegah *false alarm* (peringatan palsu) yang sering terjadi pada sistem keamanan tunggal, sistem ini menggunakan logika validasi ganda:
+1.  **PIR Sensor** harus mendeteksi pergerakan objek panas/manusia (Logika TINGGI/AKTIF).
+2.  **Ultrasonic Sensor** harus memvalidasi bahwa objek tersebut berada di dalam "Zona Kritis" (Jarak < 50 cm).
+*Jika kedua kondisi terpenuhi secara bersamaan, sistem akan memicu status `BAHAYA`, menyalakan aktuator (Buzzer/LED), dan mencatat waktu kejadian ke dalam log dasbor.*
+
+## 🛠️ Panduan Instalasi & Eksekusi
+
+Pastikan Anda telah menginstal **Node.js** dan **Go** di sistem Anda.
+
+### 1. Menjalankan Server Backend (Go)
+Backend bertugas menangkap sinyal MQTT dan membuka jalur WebSocket.
+```bash
+cd backend
+# Unduh semua dependensi (Paho MQTT & Gorilla WebSocket)
+go mod tidy
+# Jalankan server
+go run main.go
