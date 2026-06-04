@@ -6,7 +6,7 @@
 
 Sebuah sistem pemantauan keamanan pintu cerdas (*end-to-end*) tingkat industri yang dirancang dengan arsitektur telemetri *real-time*. Proyek ini menjembatani perangkat keras mikrokontroler dengan antarmuka web modern menggunakan perutean data berkecepatan tinggi, menjadikannya sistem yang andal untuk skenario *monitoring* waktu nyata.
 
-Dibuat oleh **Wannn Sion as developer at team**.
+Dibuat oleh **Wannn Sion as a developer on the team**.
 
 ## 🚀 Arsitektur & Teknologi Utama
 
