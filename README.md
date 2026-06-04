@@ -63,8 +63,8 @@ Pastikan Anda telah menginstal **Node.js** dan **Go** di sistem Anda.
 
 
 ### 🖼️ Dashboard Preview
-<img width="753" height="931" alt="Screenshot 2026-06-05 020009" src="https://github.com/user-attachments/assets/5f4524b7-d542-4df5-89c1-5029b9e2a188" />
-<img width="781" height="927" alt="Screenshot 2026-06-05 020047" src="https://github.com/user-attachments/assets/56cea54b-7d10-4d70-b2cc-e2e2b693692c" />
+<img width="650" height="720" alt="Screenshot 2026-06-05 020009" src="https://github.com/user-attachments/assets/5f4524b7-d542-4df5-89c1-5029b9e2a188" />
+<img width="650" height="720" alt="Screenshot 2026-06-05 020047" src="https://github.com/user-attachments/assets/56cea54b-7d10-4d70-b2cc-e2e2b693692c" />
 
 
 ### 1. Menjalankan Server Backend (Go)
