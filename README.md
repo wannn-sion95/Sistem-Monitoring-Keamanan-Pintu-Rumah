@@ -28,6 +28,25 @@ Untuk mencegah *false alarm* (peringatan palsu) yang sering terjadi pada sistem 
 
 Pastikan Anda telah menginstal **Node.js** dan **Go** di sistem Anda.
 
+### 📂 Structur Project
+/
+├── backend/                  # Golang WebSocket & MQTT Broker Bridge
+│   ├── go.mod
+│   └── main.go
+├── frontend/                 # React (Vite) Telemetry Dashboard
+│   └── dashboard-project/
+│       ├── src/
+│       │   ├── components/   # Modular UI Components (Navbar, EventLog, dll)
+│       │   ├── App.jsx       # Main State & WebSocket Logic
+│       │   └── App.css       # Enterprise Dark Mode Styling
+│       └── package.json
+└── README.md
+
+### 🖼️ Dashboard Preview
+<img width="753" height="931" alt="Screenshot 2026-06-05 020009" src="https://github.com/user-attachments/assets/5f4524b7-d542-4df5-89c1-5029b9e2a188" />
+<img width="781" height="927" alt="Screenshot 2026-06-05 020047" src="https://github.com/user-attachments/assets/56cea54b-7d10-4d70-b2cc-e2e2b693692c" />
+
+
 ### 1. Menjalankan Server Backend (Go)
 Backend bertugas menangkap sinyal MQTT dan membuka jalur WebSocket.
 ```bash
