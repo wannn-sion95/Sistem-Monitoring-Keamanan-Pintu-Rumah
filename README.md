@@ -28,19 +28,39 @@ Untuk mencegah *false alarm* (peringatan palsu) yang sering terjadi pada sistem 
 
 Pastikan Anda telah menginstal **Node.js** dan **Go** di sistem Anda.
 
-### 📂 Structur Project
-/
-├── backend/                  # Golang WebSocket & MQTT Broker Bridge
+## 📂 Project Structure
+
+```text
+.
+├── backend/
 │   ├── go.mod
 │   └── main.go
-├── frontend/                 # React (Vite) Telemetry Dashboard
+│
+├── frontend/
 │   └── dashboard-project/
 │       ├── src/
-│       │   ├── components/   # Modular UI Components (Navbar, EventLog, dll)
-│       │   ├── App.jsx       # Main State & WebSocket Logic
-│       │   └── App.css       # Enterprise Dark Mode Styling
+│       │   ├── components/
+│       │   │   ├── Navbar.jsx
+│       │   │   ├── EventLog.jsx
+│       │   │   └── SensorCard.jsx
+│       │   ├── App.jsx
+│       │   └── App.css
 │       └── package.json
+│
 └── README.md
+```
+
+### 📌 Directory Description
+
+| Folder/File | Description |
+|------------|-------------|
+| `backend/` | Golang backend handling MQTT, WebSocket, and event processing |
+| `frontend/` | React + Vite dashboard for real-time monitoring |
+| `components/` | Reusable UI components |
+| `App.jsx` | Main application logic and WebSocket communication |
+| `App.css` | Dashboard styling and dark theme |
+| `README.md` | Project documentation |
+
 
 ### 🖼️ Dashboard Preview
 <img width="753" height="931" alt="Screenshot 2026-06-05 020009" src="https://github.com/user-attachments/assets/5f4524b7-d542-4df5-89c1-5029b9e2a188" />
