@@ -127,6 +127,18 @@ body {
   background: linear-gradient(180deg, var(--bg-card) 0%, var(--danger-bg) 100%);
   box-shadow: 0 0 40px rgba(239, 68, 68, 0.1);
 }
+.status-hero.warning {
+  border-color: var(--warning-color);
+  background: linear-gradient(
+    180deg,
+    var(--bg-card) 0%,
+    rgba(245, 158, 11, 0.1) 100%
+  );
+  box-shadow: 0 0 30px rgba(245, 158, 11, 0.05);
+}
+.warning .status-title {
+  color: var(--warning-color);
+}
 
 .status-icon {
   font-size: 3rem;

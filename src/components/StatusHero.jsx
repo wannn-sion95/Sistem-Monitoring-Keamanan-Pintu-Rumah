@@ -1,5 +1,6 @@
 const StatusHero = ({ status }) => {
   const isDanger = status === "BAHAYA";
+  const isWarning = status === "WASPADA";
   const isWaiting = status === "MENUNGGU...";
 
   if (isWaiting) {
@@ -13,17 +14,32 @@ const StatusHero = ({ status }) => {
     );
   }
 
+  // Atur warna dan pesan berdasarkan 3 status
+  let heroClass = "safe";
+  let icon = "🛡️";
+  let title = "SISTEM AMAN";
+  let desc =
+    "Monitoring aktif. Tidak ada anomali pergerakan di area pantau sensor.";
+
+  if (isDanger) {
+    heroClass = "danger";
+    icon = "🚨";
+    title = "INTRUSI TERDETEKSI";
+    desc =
+      "Pergerakan tertangkap dan objek berada di dalam zona kritis (< 50cm).";
+  } else if (isWarning) {
+    heroClass = "warning"; // Kita akan buat CSS nya di bawah
+    icon = "⚠️";
+    title = "STATUS WASPADA";
+    desc =
+      "Sensor PIR mendeteksi pergerakan, namun objek masih berada di luar zona aman (> 50cm).";
+  }
+
   return (
-    <div className={`glass-card status-hero ${isDanger ? "danger" : "safe"}`}>
-      <div className="status-icon">{isDanger ? "🚨" : "🛡️"}</div>
-      <h2 className="status-title">
-        {isDanger ? "PERINGATAN TERDETEKSI" : "SISTEM AMAN"}
-      </h2>
-      <p className="status-desc">
-        {isDanger
-          ? "Pergerakan tertangkap oleh sensor inframerah dan objek tervalidasi berada di dalam zona (< 50cm) dari pintu rumah."
-          : "Monitoring aktif. Tidak ada pergerakan mencurigakan maupun objek di area pantau sensor."}
-      </p>
+    <div className={`glass-card status-hero ${heroClass}`}>
+      <div className="status-icon">{icon}</div>
+      <h2 className="status-title">{title}</h2>
+      <p className="status-desc">{desc}</p>
     </div>
   );
 };
