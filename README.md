@@ -8,7 +8,7 @@
 
 Sistem pemantauan keamanan pintu cerdas berbasis arsitektur telemetri real-time. Proyek ini menghubungkan mikrokontroler dengan antarmuka web melalui jalur perutean data berkecepatan tinggi untuk pemantauan kondisi lingkungan secara langsung.
 
-**Developer**: Wannn Sion
+**Developer**: Mhd. Ridwan / Wannn Sion
 
 ---
 
