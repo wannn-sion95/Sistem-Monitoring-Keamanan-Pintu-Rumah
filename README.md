@@ -15,7 +15,7 @@ Sistem pemantauan keamanan pintu cerdas berbasis arsitektur telemetri real-time.
 ## Dashboard Preview
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/af6697e9-374d-4b56-a0ba-1e4743438f77" width="48%" alt="Dashboard Preview 1" />
+  <img src="https://github.com/user-attachments/assets/5f4524b7-d542-4df5-89c1-5029b9e2a188" width="48%" alt="Dashboard Preview 1" />
   <img src="https://github.com/user-attachments/assets/56cea54b-7d10-4d70-b2cc-e2e2b693692c" width="48%" alt="Dashboard Preview 2" />
 </p>
 
